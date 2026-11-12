@@ -2,7 +2,7 @@
 
 面向第三方开发者：写一个 JS 文件，放进 HX 就能跑起来。
 
-- 适用版本：HX `0.26.x`
+- 适用版本：HX `0.26.x`（协议对齐 uz 影视 v1.6.x）
 - 运行时：QuickJS（和 uz 同一套 jsbox 规则：拼接 + 剥壳，没有 ESM / CommonJS）
 - 一份扩展 = **一个 `.js` 或 `.txt` 文件**，顶部写几行 `//@` 注释声明元数据
 
@@ -64,7 +64,7 @@ async function searchDanMu(args) {
 | 100 / 101 | 视频源 | 全局函数（100 可带 `instance`） | `getClassList` `getVideoList` `getVideoDetail` `getVideoPlayUrl` `searchVideo` |
 | 200 | 首页推荐 | 固定实例 `uzHomeJs` | `getHome` `getTab`（`getFilterList` `getSearchSuggest` 可选） |
 | 300 | 网盘工具 | 固定实例 `uzPanToolsInstance` | `getShareVideos` `getPlayInfo`（`getPanTypes` `getSupportMountPan` 可选） |
-| 400 | 弹幕 | 全局函数 | `searchDanMu`（`getLines` 可选） |
+| 400 | 弹幕 | 全局函数 | `searchDanMu`；`getLines` 可选（**已支持**，面板里可选线路） |
 | 0 | 采集站 | 不走 JS，`api` 直接是苹果CMS 接口 | — |
 | 10 | 直播源 | 不走 JS，`api` 是 M3U 地址 | — |
 
